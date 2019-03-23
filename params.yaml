@@ -1,0 +1,10 @@
+{AE: true, PCA: true, batchsize-InteractionData: 200, cancerfunctionspath: data/CancerFunctions.npy,
+epochs-AE: 5, folderformat: '%B/%d/%H_%M/', functionorder: data/Function-Order.npy,
+gopath: data/GO.npy, hiddenlayerdobatchnorm-AE: false, hiddenlayersize-AE: 4000, inputlayerdobatchnorm-AE: false,
+inputlayersize-AE: 4000, k-KNN: 1000, latentlayerdobatchnorm-AE: false, latentlayersize-AE: 2000,
+learnrate-AE: 0.001, logpath: models/March/21/17_33/output/log.tsv, metadatapath: ../../../../../data/tensorboard_labels_short.tsv,
+modeldir: models/March/21/17_33/, modelpath: models/March/21/17_33/model/model.ckpt,
+npseed-AE: 1, npseed-InteractionData: 0, optimizer-AE: SCE, ourputdir: models/March/21/17_33/output,
+outputlayerdobatchnorm-AE: false, pca-InteractionData: true, pcac-InteractionData: 1000,
+ppipath: data/PPI_normalized_3.npy, proteinorder: data/PPI-Order.npy, rescalelayerdorescale-AE: true,
+thresholdincrement-Metrics: 0.01, thresholdmax-Metrics: 1.01, thresholdmin-Metrics: 0.0}

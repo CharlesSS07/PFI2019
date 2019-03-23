@@ -1,0 +1,4 @@
+9606_experimental.tsv
+InteractionData/*
+*.npy
+*.pyc
