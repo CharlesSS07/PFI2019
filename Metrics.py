@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.metrics import precision_recall_fscore_support
 import pylab as pl
+from Log import Log
 
 class Metrics():
     
@@ -26,7 +27,12 @@ class Metrics():
             self.params.get('thresholdmax-Metrics', 1.01),
             self.params.get('thresholdincrement-Metrics', 0.01)
         )
+        
         # Which thresholds to threshold Y with.
+        
+        self.log = Log(self.paths)
+        # A log to log the metrics
+        # for each function
     
     def metric(self, y_true, y_pred):
         '''
@@ -86,3 +92,5 @@ class Metrics():
             if show:
                 pl.show()
             pl.close()
+            #
+            #self.log.append([f, ])
