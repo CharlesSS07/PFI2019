@@ -26,4 +26,6 @@ All data file missing, because they are to large to store on github. Luckily the
   5. mkdir data
   6. Using Jupyter notebook, run preprocess_data_v3.ipynb.
   7. The PPI will appear as a serialzed numpy binary array in the folder data.
-
+  
+Obtaining the GO:
+  Coming Soon
