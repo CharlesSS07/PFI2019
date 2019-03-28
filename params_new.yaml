@@ -1,6 +1,0 @@
-{AE: true, PCA: true, batchsize-InteractionData: 200, cancerfunctionspath: data/CancerFunctions.npy,
-folderformat: '%B/%d/%H_%M/', functionorder: data/Function-Order.npy, gopath: data/GO.npy,
-k-KNN: 1000, metadatapath: ../../../../../data/tensorboard_labels_short.tsv,
-npseed-InteractionData: 0, pca-InteractionData: true,
-pcac-InteractionData: 1000, ppipath: data/PPI_normalized_3.npy, proteinorder: data/PPI-Order.npy,
-thresholdincrement-Metrics: 0.01, thresholdmax-Metrics: 1.01, thresholdmin-Metrics: 0.0}
