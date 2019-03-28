@@ -2,3 +2,4 @@
 InteractionData/*
 *.npy
 *.pyc
+models/*
