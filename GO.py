@@ -17,7 +17,7 @@ class GO():
         self.FunctionOrder = list(np.load(paths.FunctionOrder))
         # Loades list of functions in order on annotations
         
-        self.CancerFunctions = np.load(paths.CancerFunctions)
+        self.CancerFunctions = list(np.load(paths.CancerFunctions))
         
         #print(self.data.sum(), self.data.max())
         
