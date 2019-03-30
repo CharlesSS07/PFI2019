@@ -193,8 +193,8 @@ class AE():
         
         self.PPI.on_epoch = self.epoch_summary
         
-        #if not self.paths.new:
-        #    self.saver.restore(self.sess, self.paths.model_path)
+        if not self.paths.pretrained:
+            self.saver.restore(self.sess, self.paths.model_path)
         # Use saver to restore a model by name.
     
     def rescale(self, inputs, name='rescale'):

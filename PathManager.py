@@ -47,13 +47,13 @@ class PathManager():
                     )
                 )
             )
-            self.new = True
+            self.pretrained = True
         else:
             self.model_folder = self.params.get(
                 'modeldir', 
                 name
             )
-            self.new = False
+            self.pretrained = False
         # The model folder is where all data is
         # stored. Here, I set it according to the
         # current time. Folder format determines
