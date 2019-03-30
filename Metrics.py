@@ -10,8 +10,7 @@ class MetricGrapher():
         
         self.params = params
         self.paths = paths
-        #self.paths.save_file(__file__)
-        print('file not saved, see line 13 in Metrics.py')
+        self.paths.save_file(__file__)
         # Set path ans params
         # managers
         
