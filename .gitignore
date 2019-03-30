@@ -1,6 +1,5 @@
 9606_experimental.tsv
-.ipynb_checkpoints/
-params/*
+.ipynb_checkpoints/*
 InteractionData/*
 *.npy
 *.pyc
