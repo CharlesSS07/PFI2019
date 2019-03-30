@@ -193,7 +193,7 @@ class AE():
         
         self.PPI.on_epoch = self.epoch_summary
         
-        if not self.paths.pretrained:
+        if self.paths.pretrained:
             self.saver.restore(self.sess, self.paths.model_path)
         # Use saver to restore a model by name.
     

@@ -47,13 +47,13 @@ class PathManager():
                     )
                 )
             )
-            self.pretrained = True
+            self.pretrained = False
         else:
             self.model_folder = self.params.get(
                 'modeldir', 
                 name
             )
-            self.pretrained = False
+            self.pretrained = True
         # The model folder is where all data is
         # stored. Here, I set it according to the
         # current time. Folder format determines
@@ -69,7 +69,7 @@ class PathManager():
         # params are written, they are saved to
         # the correct dir.
         
-        if self.new:
+        if not self.pretrained:
             self.mkdirp(self.model_folder)
         # If this model is new, create the
         # needed folders, and their parent
@@ -136,7 +136,7 @@ class PathManager():
     
     def save_file(self, path):
         
-        if self.is_recording and self.new:
+        if self.is_recording and not self.pretrained:
             subprocess.call(['cp', os.path.realpath(path), self.model_folder])
         # Save this file in model folder if it is new, and recording.
     
