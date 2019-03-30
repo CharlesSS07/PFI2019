@@ -355,7 +355,7 @@ class AE():
         for p in self.PPI.data:
             self.training[self.X] = [p]
             c.append(self.sess.run(self.latent, feed_dict=self.training))
-        return np.asarray(c)
+        return np.asarray(c)[:,0]
     
     def save(self):
         '''

@@ -29,7 +29,7 @@ def run(paramsfile='None', show=False):
         ae.save()
         c = ae.compress()
         if ph.get('postnormalization', False):
-            c = (c[:,0]-c[:,0].mean(axis=0))/np.std(c[:,0], axis=0)
+            c = (c-c.mean(axis=0))/np.std(c, axis=0)
         ae.pca_summary(c, 'latent')
         knn = KNN(pm, ph, go, c)
     elif do_pca:
