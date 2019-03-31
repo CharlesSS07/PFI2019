@@ -23,8 +23,8 @@ All data files missing because they are to large to store on github. Luckily the
   2. Download 9606.protein.links.full.v10.5.txt.gz and uncompress. (this is human ppi data)
   3. mkdir 'InteractionData', then move the ppi to this folder.
   4. cat InteractionData/9606.protein.links.full.v10.5.txt | perl -wan PPI_parse.pl > Protein-Protein_Combined-Interactions.txt
-  5. Download and decompress human protein annotations from here:
-  6. Parse only the experimentally determined annotations out of tsv file using: cat <file> | perl -wane '<command>' > 9606_experimental.tsv
+  5. Download and decompress human protein annotations from here: "GO Protein Annotations for Human"
+  6. Parse only the experimentally determined annotations out of tsv file using: cat "file" | perl -wane 'comming soon' > 9606_experimental.tsv
   7. mkdir data
   8. Using Jupyter notebook, run preprocess_data_v3.ipynb.
   9. The PPI and GO will appear as serialzed numpy binary arrays in the data folder.
