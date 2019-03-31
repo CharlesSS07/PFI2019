@@ -105,8 +105,9 @@ class MetricGrapher():
                 x, y = m.get(annotation, thresholded)
                 if m.xaxis.name=='None':
                     x = thresholds
-                aucs.append(auc(y, x, reorder=True))
+                aucs.append(auc(y, x))
                 pl.plot(x, y, label=m.yaxis.name+' over '+m.xaxis.name)#, marker='o')
+            print('plotting')
             pl.legend()
             f = f[:2]+'-'+f[3:]
             pl.savefig(self.paths.join(self.paths.output, f+'.pdf'))
@@ -187,8 +188,6 @@ class Metric():
         
         self.params = params
         self.paths = paths
-        #self.paths.save_file(__file__)
-        print('file not saved, see line 13 in Metrics.py')
         # Set path ans params
         # managers
         

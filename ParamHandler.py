@@ -36,7 +36,7 @@ class ParamHandler():
         
         try:
             with open(self.file, 'r') as f:
-                self.magic_vals = yaml.load(f)
+                self.magic_vals = yaml.load(f, Loader=yaml.Loader)
         except FileNotFoundError:
             self.magic_vals = {}
 
