@@ -22,11 +22,11 @@ optimizer-AE: SCE,
 outputlayerdobatchnorm-AE: false,
 pca-InteractionData: false,
 pcac-InteractionData: 1000,
-ppipath: data/PPI_normalized_3.npy,
+ppipath: data/PPI_normalized_1.npy,
 proteinorder: data/PPI-Order.npy,
 rescalelayerdorescale-AE: true,
 thresholdincrement-Metrics: 0.01,
 thresholdmax-Metrics: 1.01,
 thresholdmin-Metrics: 0.0,
-postnormalization: true
+postnormalization: false
 }

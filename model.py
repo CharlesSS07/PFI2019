@@ -28,23 +28,19 @@ def run(paramsfile='None', show=False):
         ae.train()
         ae.save()
         c = ae.compress()
-        if ph.get('postnormalization', False):
-            c = (c-c.mean(axis=0))/np.std(c, axis=0)
         ae.pca_summary(c, 'latent')
         knn = KNN(pm, ph, go, c)
     elif do_pca:
         ppi.pca()
         c = ppi.data
-        if ph.get('postnormalization', False):
-            c = (c-c.mean(axis=0))/np.std(c, axis=0)
         knn = KNN(pm, ph, go, c)
 
     Y = knn.predict()
     met = MetricGrapher(pm, ph, Y, go)
-    met.new_metric(Metric.Function('posP'), Metric.Function('posR'))
-    met.new_metric(Metric.Function('negP'), Metric.Function('negR'))
-    met.new_metric(Metric.Function('tpr'), Metric.Function('fpr'))
-    met.axies = ['Recall/TPR', 'Precision/TPR']
+    met.new_metric(Metric.Function('posP'), Metric.Function('posR'), label='PR on positives.')
+    met.new_metric(Metric.Function('negP'), Metric.Function('negR'), label='PR on negatives.')
+    #met.new_metric(Metric.Function('tpr'), Metric.Function('fpr'), label='ROC')
+    met.axies = ['Recall', 'Precision']
     met.initialize_metrics()
     met.make_graphs(show=show)
     ph.save()

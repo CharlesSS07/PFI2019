@@ -355,7 +355,10 @@ class AE():
         for p in self.PPI.data:
             self.training[self.X] = [p]
             c.append(self.sess.run(self.latent, feed_dict=self.training))
-        return np.asarray(c)[:,0]
+        c = np.asarray(c)[:,0]
+        if self.params.get('postnormalization-AE', False):
+            c = (c-c.mean(axis=0))/np.std(c, axis=0)
+        return c
     
     def save(self):
         '''

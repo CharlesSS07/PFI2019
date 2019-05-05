@@ -10,7 +10,7 @@ class MetricGrapher():
         
         self.params = params
         self.paths = paths
-        self.paths.save_file(__file__)
+        #self.paths.save_file(__file__)
         # Set path ans params
         # managers
         
@@ -46,7 +46,7 @@ class MetricGrapher():
         # use thresholds
         
     
-    def new_metric(self, ymetfunc, xmetfunc=None):
+    def new_metric(self, ymetfunc, xmetfunc=None, label=None):
         '''
         Creates a new metric, sets function.
         '''
@@ -56,6 +56,7 @@ class MetricGrapher():
         else:
             m.xaxis = xmetfunc
         m.yaxis = ymetfunc
+        m.label = label
         
         self.metrics.append(m)
         #return m
@@ -105,14 +106,20 @@ class MetricGrapher():
                 x, y = m.get(annotation, thresholded)
                 if m.xaxis.name=='None':
                     x = thresholds
-                aucs.append(auc(y, x))
-                pl.plot(x, y, label=m.yaxis.name+' over '+m.xaxis.name)#, marker='o')
-            print('plotting')
+                aucs.append(auc(x, y))
+                if not m.label==None:
+                    name = m.label
+                else:
+                    name = m.yaxis.name+' vs. '+m.xaxis.name
+                pl.plot(x, y, label=name)#, marker='o')
+            #print('plotting')
             pl.legend()
             f = f[:2]+'-'+f[3:]
-            pl.savefig(self.paths.join(self.paths.output, f+'.pdf'))
+            
             if show:
                 pl.show()
+            else:
+                pl.savefig(self.paths.join(self.paths.output, f+'.pdf'))
             pl.close()
             self.log.append([f, *aucs])
     
@@ -206,6 +213,9 @@ class Metric():
         
         self.xaxis = None
         self.yaxis = None
+        
+        self.label = None
+        # Key to this line on graph.
     
     def get(self, annotation, thresholded):
         X = []
